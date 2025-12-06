@@ -1,0 +1,13 @@
+dbt_example:
+  outputs:
+    dev:
+      dataset: "{{ env_var('DBT_DBNAME', 'dbt') }}"
+      job_execution_timeout_seconds: 100000
+      job_retries: 2
+      location: US
+      method: service-account
+      project: 'titanium-vim-480412-h2'
+      threads: 4
+      type: bigquery
+      keyfile: "/home/userubuntu/.dbt/titanium-vim-480412-h2-c58ce541b1ff.json"
+  target: dev
